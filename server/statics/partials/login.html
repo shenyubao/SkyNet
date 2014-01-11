@@ -1,0 +1,58 @@
+<!-- 登录组件 -->
+<div class="widget ui-draggable" id="widget_widget_61" style="width: 555px; height: 495px; z-index: 5; display: block; left: 362.5px; top: 0px; cursor:auto;">
+
+    <div class="widget-content" style="width: 555px; height: 470px;"><div class="widget-login">
+    <div class="widget-login-main">
+        <div class="widget-login-frm widget-login-cnt" style="display: block;">
+            <div class="widget-login-account">
+                <div class="widget-login-account-area">
+                    <h2>登录</h2>
+                    <div class="widget-login-account-item">
+                        <input class="widget-login-account-input" type="text" value="" placeholder="用户名" ng-model="form.user">
+                    </div>
+                    <div class="widget-login-account-item">
+                        <input class="widget-login-pwd-input" type="password" value="" placeholder="密码" ng-model="form.pwd">
+                        <button class="btn widget-login-btn" type="button" cmd="internetLogin" ng-click="submit(form)">登录
+                        </button>
+                    </div>
+                </div>
+                <div class="widget-login-message" ng-show="login_fail">{{log}}</div>
+            </div>
+            <div class="widget-login-qr">
+                <h2>扫描二维码</h2>
+                <div class="widget-login-qr-imgWrapper widget-login-qr-loading">
+                    <img src="{{qr_src}}" height="125" width="125" style="">
+                </div>
+                <a class="widget-login-refresh-qrcode" href="#" style="display: none;">刷新</a>
+            </div>
+            <div class="clearfix"></div>
+            <div class="widget-login-bottom" style="display:none;">
+
+                <div class="widget-login-bottom-right">
+                    <a class="widget-login-show-signUp" href="http://www.airdroid.com/signup/" target="_blank">注册</a>
+                </div>
+            </div>
+        </div>
+        <div class="widget-login-conn widget-login-cnt"><div class="widget-login-connecting" style="display: none">
+    <div class="widget-login-connecting-log"></div>
+    <div class="widget-login-connecting-loading"></div>
+    <button class="btn widget-login-cancel-connect">取消</button>
+</div><div class="widget-login-failed" style="display: none;">
+    <p class="widget-login-failed-title">无法连接到设备。您可以排除以下原因后重试：</p>
+    <div class="widget-login-failed-text">
+        <ul>
+            <li>检查您设备的网络连接是否正常</li>
+            <li>唤醒或解锁您的Android设备</li>
+        </ul>
+        <div class="widget-login-failed-reconn">
+            <button class="btn widget-login-failed-reconn-btn">重新连接</button>
+        </div>
+    </div>
+</div></div>
+        <div class="widget-login-footer"></div>
+    </div>
+    <div class="widget-login-btn-close"></div>
+</div></div>
+    <div class="widget_switch_mask" style="display: none; "></div>
+</div>
+<!-- 登录组件结束 -->

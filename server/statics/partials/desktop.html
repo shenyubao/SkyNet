@@ -1,0 +1,302 @@
+<div>
+	
+	<!-- btns -->
+
+	<div class="desktopicon ui-draggable" title="相机" style="left: 50px; top: 30px;" ng-click="open_camera()">
+        <img src="./res/images/desktopicon/camera_80.png">
+        <div class="desktopicon_title">
+            <div class="l">相机</div><div class="r"></div>
+        </div>
+        <div class="desktopicon_count is-hide">0</div>
+    </div>
+
+    <div class="desktopicon ui-draggable" title="屏幕截图" style="left: 50px; top: 130px;" ng-click="screen_shot()">
+        <img src="./res/images/desktopicon/screenshot_80.png">
+        <div class="desktopicon_title">
+            <div class="l">屏幕截图</div><div class="r"></div>
+        </div>
+        <div class="desktopicon_count is-hide">0</div>
+    </div>
+
+    <div class="desktopicon ui-draggable" title="查找我的手机" style="left: 130px; top: 30px;" ng-click="open_map()">
+        <img src="./res/images/desktopicon/find_80.png">
+        <div class="desktopicon_title">
+            <div class="l">找机</div><div class="r"></div>
+        </div>
+        <div class="desktopicon_count is-hide">0</div>
+    </div>
+
+
+    <!-- btns 结束 -->
+
+
+    <!-- 手机信息组件 -->
+    <div x-drag class="widget ui-draggable noclick" id="widget_widget_23" style="width: 302px; height: 190px; z-index: 9; display: block; right: 10px; top: 1px;cursor:auto;">
+
+        <div class="widget-content" style="width: 302px; height: 165px;">
+            <div class="widget-summary">
+            <img class="widget-summary-phone" src="./res/images/small.png">
+        <div class="widget-summary-phoneName">{{device_info.PhoneModel}}</div>
+        <div class="over-ellipsis widget-summary-phoneOS">{{device_info.AndroidVersion}}</div>
+        <div class="widget-summary-phoneLoad loading-white-mask is-hide">
+            <span>loading...</span>
+        </div>
+        <div class="widget-summary-phoneSize" style="display: block;">
+            <div class="widget-summary-phoneMem" style="top: 80px;">
+                <div class="widget-summary-sysIcon"></div>
+                <div class="widget-summary-sysUsed" style="width: {{device_info.w_memory_avail}}px;">
+                    &nbsp;</div>
+                <div class="widget-summary-sysAvail" style="width: {{device_info.w_memory_left}}px;">
+                    &nbsp;</div>
+                <div class="widget-summary-sysInfo" title="内存">{{device_info.memory_avail}} GB / {{device_info.memory_total}} GB</div>
+            </div>
+            <div class="widget-summary-phoneSD">
+                <div class="widget-summary-memIcon"></div>
+                <div class="widget-summary-sdUsed" style="width: {{device_info.w_sd_avail}}px;">&nbsp;
+                </div>
+                <div class="widget-summary-sdAvail" style="width: {{device_info.w_sd_left}}px;">&nbsp;
+                </div>
+                <div class="widget-summary-sdInfo" title="SD卡">{{device_info.sd_avail}} GB / {{device_info.sd_total}} GB</div>
+            </div>
+        </div>
+        <div class="widget-summary-refresh icon icon_refresh ai-icon ai-icon-refresh">
+        </div>
+    </div></div>
+        <div class="widget_switch_mask" style="display: none; "></div>
+    </div>
+    <!-- 手机信息组件结束 -->
+
+
+    <!-- 工具箱组件 -->
+    <div class="widget ui-draggable noclick" id="widget_widget_74" style="width: 295px; height: 270px; z-index: 12; display: block; right: 20px; top: 180px;cursor:auto;">
+        <div class="widget-tool-bar">
+            <div class="widget-btn-bar is-hide" style="display: none;">
+
+
+            </div>
+         </div>
+        <div class="widget-content" style="width: 295px; height: 245px;"><div class="widget-airTransport">
+        <div class="widget-airTransport-top"></div>
+        <div class="widget-airTransport-tabSelector">
+            <div class="widget-airTransport-tab widget-airTransport-tab-file {{active.file}} J_drag" m="file" title="文件" ng-click="tab('file')">
+                <div class="widget-airTransport-tab-icon"></div>
+                <div class="widget-airTransport-tab-name over-ellipsis">文件</div>
+                <div class="widget-airTransport-tab-count">0</div>
+            </div>
+            <div class="widget-airTransport-tab widget-airTransport-tab-url {{active.url}}" m="url" title="网址" ng-click="tab('url')">
+                <div class="widget-airTransport-tab-icon"></div>
+                <div class="widget-airTransport-tab-name over-ellipsis">网址</div>
+                <div class="widget-airTransport-tab-count">0</div>
+            </div>
+            <div class="widget-airTransport-tab widget-airTransport-tab-clipboard {{active.clipboard}}" m="clipboard" title="剪贴板" ng-click="tab('clipboard')">
+                <div class="widget-airTransport-tab-icon"></div>
+                <div class="widget-airTransport-tab-name over-ellipsis">剪贴板</div>
+                <div class="widget-airTransport-tab-count">0</div>
+            </div>
+            <div class="widget-airTransport-tab widget-airTransport-tab-app {{active.app}} J_drag" m="app" title="应用" ng-click="tab('app')">
+                <div class="widget-airTransport-tab-icon"></div>
+                <div class="widget-airTransport-tab-name over-ellipsis">应用</div>
+                <div class="widget-airTransport-tab-count">0</div>
+            </div>
+        </div>
+        <div class="widget-airTransport-up widget-airTransport-up-file" style="left:{{anchor_left}}px;"></div>
+        <div class="widget-airTransport-item {{hide.file}}" m="file">
+            <div class="widget-airTransport-file-path">
+                上传到 : <a>SD Card/skynet/upload/file</a>
+            </div>
+            <div class="widget-airTransport-Drag-input widget-airTransport-file-input">
+                <div class="widget-airTransport-Drag-tip" id="form_uploader">
+                    拖放文件到此处
+                </div>
+                <div class="widget-airTransport-Drag-item">
+
+                </div>
+            </div>
+            <div class="btn btn-primary widget-airTransport-blueBtn widget-airTransport-app-upload" style="position: relative; cursor: pointer;">
+                <div class="widget-airTransport-app-icon" style="background-position-x: -29px;"></div>
+                <div class="widget-airTransport-app-upload-area">
+                    <div id="widget-airTransport-app-upload"></div>
+                </div>
+            <form id="form_input" style="position: absolute; right: 0px; top: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; cursor: pointer; opacity: 0;"><input multiple="multiple" type="file" name="file" style=" width:100%;height:100%;" title="选择文件"></form></div>
+            
+            <div class="widget-airTransport-result"></div>
+            <div class="widget-airTransport-file-con" style="overflow: hidden; padding: 0px; height: 0px; width: 266px;">
+
+            <div class="jspContainer" style="width: 266px; height: 0px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 266px;"><div class="widget-airTransport-file-list">
+
+                </div></div></div></div>
+            <div class="widget-airTransport-clearError">
+                <div class="widget-airTransport-cancelIcon widget-airTransport-clearIcon"></div>
+                <div class="widget-airTransport-clearTip">清除</div>
+            </div>
+        </div>
+        <div class="widget-airTransport-item {{hide.url}}" m="url">
+            <input class="widget-airTransport-url-input" type="text" ng-model="air_url" placeholder="网址" spellcheck="false">
+            <a class="icon-search only-clear have-content is-hide"></a>
+            <div class="btn btn-primary widget-airTransport-blueBtn widget-airTransport-url-open" ng-click="send_url()"><div></div></div>
+        </div>
+        <div class="widget-airTransport-item {{hide.clipboard}}" m="clipboard">
+            <textarea class="widget-airTransport-clip-input" placeholder="剪贴板" ng-model="air_clipboard"></textarea>
+            <div class="btn widget-airTransport-btn widget-airTransport-clip-read" ng-click="read_clipboard()"><div></div></div>
+            <div class="btn btn-primary widget-airTransport-blueBtn widget-airTransport-clip-push" ng-click="push_clipboard()"><div></div></div>
+        </div>
+        <div class="widget-airTransport-item {{hide.app}}" m="app">
+            <div class="widget-airTransport-Drag-input widget-airTransport-app-input">
+                <div class="widget-airTransport-Drag-tip" id="apk_uploader">
+                    拖放APK文件到这里
+                </div>
+                <div class="widget-airTransport-Drag-item">
+
+                </div>
+                <div class="widget-airTransport-proceed">
+                    <div class="widget-airTransport-proTip">请在设备上完成操作</div>
+                    <div class="widget-airTransport-reinstall"></div>
+                    <div class="widget-airTransport-cancelIcon widget-airTransport-proIcon"></div>
+                </div>
+            </div>
+            <div class="btn btn-primary widget-airTransport-blueBtn widget-airTransport-app-upload" style="position: relative; cursor: pointer;">
+                <div class="widget-airTransport-app-icon"></div>
+                <div class="widget-airTransport-app-upload-area">
+                    <div id="widget-airTransport-app-upload"></div>
+                </div>
+            <form id="apk_input" style="position: absolute; right: 0px; top: 0px; width: 100%; height: 100%; margin: 0pt; padding: 0pt; cursor: pointer; opacity: 0;"><input multiple="multiple" type="file" name="file" style=" width:100%;height:100%;" title="选择文件"></form></div>
+            <div class="widget-airTransport-result"></div>
+            <div class="widget-airTransport-app-con" style="overflow: hidden; padding: 0px; height: 0px; width: 266px;">
+
+            <div class="jspContainer" style="width: 266px; height: 0px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 266px;"><div class="widget-airTransport-app-list">
+
+                </div></div></div></div>
+            <div class="widget-airTransport-clearError">
+                <div class="widget-airTransport-cancelIcon widget-airTransport-clearIcon"></div>
+                <div class="widget-airTransport-clearTip">清除</div>
+            </div>
+        </div>
+    </div></div>
+        <div class="widget_switch_mask" style="display: none; "></div>
+    </div>
+    <!-- 工具箱组件结束 -->
+
+
+	<!-- 摄像头预览 -->
+
+	<div ng-show="show_camera" id="drag_sc_win" class="window ui-draggable" app="appwin_78" max="false" style="position: absolute; width: 500px; height: 356px; left: 414px; top: 9px; display: block; z-index: 24;">
+    <div class="window_outer">
+        <div class="window_inner">
+            <div class="window_content">
+                <div class="window_titleBar" xdrag="drag_sc_win">
+                    <div class="window_titleButtonBar">
+                        <a class="window_action_button window_close" ng-click="close_camera()"></a>
+                        
+                    </div>
+                    <div class="window_title titleText">
+                        <img class="window_icon" valign="middle" src="./res/images/desktopicon/camera_80.png">
+                        <span class="window_title_text over-ellipsis">相机</span>
+                    </div>
+                </div>
+                <div class="window_bodyOuter" style="height: 306px;">
+                    <div class="window_bodyArea">
+                        <div class="content_area"><div class="layout-module mod-camera" curori="">
+    
+    
+    
+    
+    <div class="mod-camera-playCon" ng-show="is_ready">
+        
+        <img id="camera_img" alt="" style="width:100%;height:100%;">
+    </div>
+    
+<div class="blockUI blockMsg blockElement" style="z-index: 100010; position: absolute; padding: 0px; margin: 0px; top: 148px; left: 199.5px; text-align: center; color: rgb(0, 0, 0); border: none; cursor: wait; width: 79px; height: 10px;" ng-show="not_ready"> <div class="loading-blue-mask"></div></div></div></div>
+                    </div>
+                </div>                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    <div class="window_switch_mask"></div>
+</div>
+
+	<!-- 摄像头预览结束 -->
+
+	<!-- 地图开始 -->
+
+		<div ng-show="show_map" id="drag_map_win" class="window ui-draggable" app="appwin_78" max="false" style="position: absolute; width: 800px; height: 400px; left: 293px; top: 9px; display: block; z-index: 25;">
+	    <div class="window_outer">
+	        <div class="window_inner">
+	            <div class="window_content">
+	                <div class="window_titleBar" xdrag="drag_map_win">
+	                    <div class="window_titleButtonBar">
+	                        <a class="window_action_button window_close" ng-click="close_map()"></a>
+	                        
+	                    </div>
+	                    <div class="window_title titleText">
+	                        <img class="window_icon" valign="middle" src="./res/images/desktopicon/find_80.png">
+	                        <span class="window_title_text over-ellipsis">查找我的手机</span>
+	                    </div>
+	                </div>
+	                <div class="window_bodyOuter" >
+	                    <div class="window_bodyArea">
+	                        <div class="content_area">
+
+	                        <div class="layout-module mod-camera" curori="">
+	    
+	    
+	    
+	    
+	    <div class="mod-camera-playCon" id="map_box" style="width: 100%;height: 100%;overflow: hidden;margin:0;">
+	        
+	        
+	    </div>
+
+	</div></div></div>
+	                </div>                
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<!-- 地图结束 -->
+
+	<!-- 屏幕截图 -->
+	
+		<div ng-show="screen_show" id="drag_ss_win" class="window ui-draggable" style="position: absolute; width: 400px; left: 414px; top: 9px; display: block; z-index: 25;">
+	    <div class="window_outer">
+	        <div class="window_inner">
+	            <div class="window_content">
+	                <div class="window_titleBar" xdrag="drag_ss_win">
+	                    <div class="window_titleButtonBar">
+	                        <a class="window_action_button window_close" ng-click="close_screen()"></a>
+	                        
+	                    </div>
+	                    <div class="window_title titleText">
+	                        <img class="window_icon" valign="middle" src="./res/images/desktopicon/screenshot_80.png">
+	                        <span class="window_title_text over-ellipsis">屏幕截图</span>
+	                    </div>
+	                </div>
+	                <div class="window_bodyOuter" >
+	                    <div class="window_bodyArea">
+	                        <div class="content_area">
+
+	                        <div class="layout-module mod-camera" curori="">
+	    
+	    
+	    
+	    
+	    <div class="mod-camera-playCon" id="map_box" style="width: 100%;">
+	        <img id="screen_img" alt="" style="width:100%;">
+	    </div>
+
+	</div></div></div>
+	                </div>                
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 屏幕截图 -->
+</div>
