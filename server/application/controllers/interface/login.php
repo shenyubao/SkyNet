@@ -8,13 +8,7 @@ class Login extends CI_Controller {
         $pwd  = $this->input->get("pwd");
         $this->config->load('account');
         $accounts = $this->config->item("account");
-        $curr_account = false;
-        foreach($accounts[0] as $account){
-            if($user == $account['account'] && $pwd == $account['password']){
-                $curr_account = $account;
-                break;
-            }
-        }
+        $curr_account = $accounts[$user];
 
         //输出密码错误
         if($curr_account == false){

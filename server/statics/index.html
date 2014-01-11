@@ -7,7 +7,22 @@
   <link rel="stylesheet" href="./res/widget-login.css">
   <link rel="stylesheet" href="./res/widget-summary.css">
   <link rel="stylesheet" href="./res/widget-airTransport.css">
-  <link rel="stylesheet" href="css/app.css"/>
+  <style>
+
+    .layout-taskbar-logout {
+      display: block;
+      position: absolute;
+      bottom: 7px;
+      right: 90px;
+      width: 26px;
+      height: 22px;
+      background: rgba(0, 0, 0, 0) url(./res/images/main.png) no-repeat;
+      background-position: -117px -160px;
+      cursor: pointer;
+    }
+    
+  </style>
+  <script src="http://api.map.baidu.com/api?v=2.0&ak=6hG52m5eiOqLdaF1incm7BLy"></script>
 </head>
 <body ng-controller="index">
 
@@ -21,8 +36,9 @@
       <!-- 任务栏 -->
       <div ng-controller="taskbar" >
       <div class="block-taskbar" ng-show="task_show">
-          <div class="device-status layout-taskbar-connect-model connect-lite" style="display: block;"><div class="connect-status"></div> </div>
+          <div class="device-status layout-taskbar-connect-model connect-lite" style="display: none;"><div class="connect-status"></div> </div>
           <div class="layout-taskbar-wifi wifi2" style="display: block;" title="{{wifi}}"></div>
+          <div class="layout-taskbar-logout" style="display: block;" ng-click="logout()"></div>
           <div class="device-status layout-taskbar-battery i-taskbar-battery" style="display: block;">
               <div class="layout-taskbar-battery-v i-taskbar-battery-v">{{battery_level}}%</div>
               <div class="layout-taskbar-battery-vbg i-taskbar-battery-vbg" style="width: {{battery_level_w}}px;"></div>
@@ -42,4 +58,5 @@
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/services.js"></script>
+  <script src="js/directives.js"></script>
 </html>

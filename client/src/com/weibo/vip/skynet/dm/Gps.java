@@ -60,10 +60,14 @@ public class Gps extends VIPHttpHandler{
         
         Map<String, String> params = parseGetParamters(request);
         
-        Looper.prepare();
+//        if(VipApplication.lockLooper != true){
+//        	Looper.prepare();
+//        	VipApplication.lockLooper = true;
+//        }
+        
         // 获取系统LocationManager服务  
         LocationManager locationManager = (LocationManager) VipApplication.getInstance().getSystemService(Context.LOCATION_SERVICE);  
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 0, locationListener);
+        //locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0, locationListener);
         // 从GPS获取最近的定位信息  
         Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         int index = 100;
@@ -75,17 +79,19 @@ public class Gps extends VIPHttpHandler{
 //        if(location != null){
 //    	    result.put("code", "10000");
 //            result.put("msg", "success");
-//        	result.put("altitude",  116.3);
-//        	result.put("latitude",  39.9);
+//        	result.put("altitude",  116.30665539913639);
+//        	result.put("latitude",  39.984177917880714);
 //        }else{
-//        	result.put("code", "10001");
-//            result.put("msg", "failed");
+//        	result.put("code", "10000");
+//            result.put("msg", "success");
+//         	result.put("altitude",  116.30665539913639);
+//         	result.put("latitude",  39.984177917880714);
 //        }
         
         result.put("code", "10000");
         result.put("msg", "success");
-    	result.put("altitude",  116.3);
-    	result.put("latitude",  39.9);
+     	result.put("altitude",  116.30584084655766);
+     	result.put("latitude",  39.98477991531608);
         
         StringEntity entity = new StringEntity(wrap_jsonp(result.toString(),params), Constants.ENCODING);
 		response.setStatusCode(HttpStatus.SC_OK);

@@ -1,9 +1,11 @@
 package com.weibo.vip.skynet.camera;
 
 import java.io.IOException;
+import java.util.List;
 
 import android.content.Context;
 import android.hardware.Camera;
+import android.hardware.Camera.Size;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -25,6 +27,7 @@ public class CameraView extends SurfaceView {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 	
@@ -37,6 +40,7 @@ public class CameraView extends SurfaceView {
 				mCamera.setPreviewDisplay(holder);
 			} catch (IOException e) {
 				// 释放相机资源并置空
+				e.printStackTrace();
 				mCamera.release();
 				mCamera = null;
 			}
@@ -54,6 +58,7 @@ public class CameraView extends SurfaceView {
 			mCamera = null;
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
@@ -87,6 +92,7 @@ public class CameraView extends SurfaceView {
 					mCamera.setPreviewDisplay(holder);
 				} catch (IOException e) {
 					// 释放相机资源并置空
+					e.printStackTrace();
 					mCamera.release();
 					mCamera = null;
 				}
@@ -103,6 +109,30 @@ public class CameraView extends SurfaceView {
 				Camera.Parameters params = mCamera.getParameters();
 				// set the focus mode
 				params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+				
+				List<Size> sizes = params.getSupportedPictureSizes();
+				Camera.Size size = sizes.get(0);
+				for(int i=0;i<sizes.size();i++)
+				{
+				    if(sizes.get(i).width < size.width)
+				        size = sizes.get(i);
+				}
+				
+				List<Size> previewSizes = params.getSupportedPreviewSizes();
+				Camera.Size previewSize = previewSizes.get(0);
+				for(int i=0;i<previewSizes.size();i++)
+				{
+				    if(previewSizes.get(i).width < previewSize.width)
+				    	previewSize = previewSizes.get(i);
+				}
+				
+				params.setPictureSize(size.width, size.height);
+				params.setPreviewSize(previewSize.width, previewSize.height);
+				
+				params.setRotation(90);
+				//params.setJpegQuality(1);
+				//params.setPictureSize(320, 240);
+
 				// set Camera parameters
 				mCamera.setParameters(params);
 

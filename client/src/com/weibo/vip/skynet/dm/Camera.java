@@ -53,6 +53,7 @@ public class Camera extends VIPHttpHandler{
 			response.setHeader("Content-Type", "image/jpeg");
 			response.setHeader("Connection", "Keep-Alive");
 			byte content[] = VipApplication.getInstance().pictureBytes;
+			VipApplication.getInstance().pictureBytes = null;
 			if(content != null){
 				ByteArrayEntity arrayEntity = new ByteArrayEntity(content);
 				response.setEntity(arrayEntity);
