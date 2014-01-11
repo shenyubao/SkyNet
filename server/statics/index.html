@@ -1,9 +1,45 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app="skyNet">
 <head>
-    <title>hello world</title>
+  <meta charset="utf-8">
+  <title>Sky Net (aaalpphaa)</title>
+  <link rel="stylesheet" href="./res/style.css">
+  <link rel="stylesheet" href="./res/widget-login.css">
+  <link rel="stylesheet" href="./res/widget-summary.css">
+  <link rel="stylesheet" href="./res/widget-airTransport.css">
+  <link rel="stylesheet" href="css/app.css"/>
 </head>
-<body>
-    hello world!
-</body>
+<body ng-controller="index">
+
+  <div id="block-desktop" class="" style="z-index: 1;">
+      
+
+      <div ng-view class="layout-desktops-container">
+
+      </div>
+
+      <!-- 任务栏 -->
+      <div ng-controller="taskbar" >
+      <div class="block-taskbar" ng-show="task_show">
+          <div class="device-status layout-taskbar-connect-model connect-lite" style="display: block;"><div class="connect-status"></div> </div>
+          <div class="layout-taskbar-wifi wifi2" style="display: block;" title="{{wifi}}"></div>
+          <div class="device-status layout-taskbar-battery i-taskbar-battery" style="display: block;">
+              <div class="layout-taskbar-battery-v i-taskbar-battery-v">{{battery_level}}%</div>
+              <div class="layout-taskbar-battery-vbg i-taskbar-battery-vbg" style="width: {{battery_level_w}}px;"></div>
+          </div>
+      </div>
+      </div>
+      <!-- 任务栏结束 -->
+  </div>
+
+  <div id="block-wallpaper" class="type-scale">
+    <img class="stock" style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%;" src="./res/images/wallpaper/meitu.jpg">
+    <div class="bg" style=""></div>
+  </div>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
 </html>
