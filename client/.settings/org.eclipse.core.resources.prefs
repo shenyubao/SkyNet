@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/weibo/vip/skynet=UTF-8
+encoding//src/com/weibo/vip/skynet/Constants.java=UTF-8
+encoding//src/com/weibo/vip/skynet/CrashHandler.java=UTF-8
+encoding//src/com/weibo/vip/skynet/VipApplication.java=UTF-8
+encoding//src/com/weibo/vip/skynet/service/WebService.java=UTF-8
+encoding//src/com/weibo/vip/skynet/util/CommonUtil.java=UTF-8
+encoding//src/com/weibo/vip/skynet/util/FileUtil.java=UTF-8
+encoding//src/com/weibo/vip/skynet/util/NetUtil.java=UTF-8
+encoding//src/com/weibo/vip/skynet/webserver/HttpHandler.java=UTF-8
+encoding//src/com/weibo/vip/skynet/webserver/WebServer.java=UTF-8
