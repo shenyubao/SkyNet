@@ -29,30 +29,27 @@ Fetures
 Screenshot
 ----
 登录界面
-<img src="./screenshot/pic1.png" width="640">
+<img src="https://raw.github.com/Shenyubao/SkyNet/master/screenshot/pic1.png" width="640">
 
 主界面
-<img src="./screenshot/pic2.png" width="640">
+<img src="https://raw.github.com/Shenyubao/SkyNet/master/screenshot/pic2.png" width="640">
 
 视频(照相)监控
-<img src="./screenshot/pic3.png" width="640">
+<img src="https://raw.github.com/Shenyubao/SkyNet/master/screenshot/pic3.png" width="640">
 
 屏幕同步
-<img src="./screenshot/pic4.png" width="640">
+<img src="https://raw.github.com/Shenyubao/SkyNet/master/screenshot/pic4.png" width="640">
 
 查找设备
-<img src="./screenshot/pic5.png" width="640">
+<img src="https://raw.github.com/Shenyubao/SkyNet/master/screenshot/pic5.png" width="640">
 
 
 Code&Demo
 ----
 **代码**: 内部Gitlab平台 http://www.gitlab.com/ssybb1988/skynet 
 
-**页面**: 暂不发布
-
 **账户**: yubao1/123456 renbin1/123456 zhouliang2/123456
 
-**客户端**: 暂不发布
 
 
 Authors
