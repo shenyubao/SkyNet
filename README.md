@@ -10,7 +10,7 @@ SkyNet目标打通Android设备与互联网，用Web的方式建立个人与家�
 
 Fetures
 ----
-一期 (Hackton)
+一期 (新浪Hackton,2014.1.10-2014.1.11)
 
 * 查看Android设备的电量，网络，存储，粘贴板等信息
 * 根据Android设备的摄像头，拍照监控
